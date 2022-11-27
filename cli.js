@@ -79,7 +79,7 @@ if (days == 0){
 	console.log("in" + " " + days + "days.");
 }
 else{
-	console.log("tomorrrow.");
+	console.log("tomorrrow");
 }
 
 //Printing if the user will need their galoshes
