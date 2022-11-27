@@ -71,10 +71,10 @@ if(args.j){
 if (days == 0){
 	console.log("today.");
 }else if (days > 1){
-	console.log("In" + " " + days + "days, ");
+	console.log("in" + " " + days + "days.");
 }
 else{
-	console.log("Tomorrrow, ");
+	console.log("tomorrrow,");
 }
 
 //Printing if the user will need their galoshes
