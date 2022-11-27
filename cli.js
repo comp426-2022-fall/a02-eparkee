@@ -67,6 +67,11 @@ if(args.j){
 	process.exit(0)
 }
 
+//modifiying the days
+if(args.d != null){
+	days = args.d;
+}
+
 //printing the day given by user
 if (days == 0){
 	console.log("today.");
