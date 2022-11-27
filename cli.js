@@ -33,7 +33,7 @@ else{
 		latitude = -args.s;
 	}
 	else{
-		console.log("Latitude is not valid.")
+		console.log("Latitude must be in range.")
 		process.exit(0);
 	}
 }
@@ -41,8 +41,12 @@ else{
 if(args.e){
 	longitude = args.e;
 }
-if(args.w){
+else if(args.w){
 	longitude = -args.w;
+}
+else{
+	console.log("Latitude must be in range.")
+	process.exit(0);
 }
 //setting the timezone
 if(args.z){
@@ -65,7 +69,7 @@ if(args.j){
 
 //printing the day given by user
 if (days == 0){
-	console.log("Today, ");
+	console.log("today.");
 }else if (days > 1){
 	console.log("In" + " " + days + "days, ");
 }
