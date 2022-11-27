@@ -6,7 +6,7 @@ import moment from "moment-timezone";
 import fetch from "node-fetch";
 
 //Setting the variables that will be used for the javascript
-const timezone = moment,tz,guest();
+const timezone = moment.tz.guess();
 const args = minimist(process.arv.slice(2));
 
 //setting the default variables
@@ -17,19 +17,6 @@ let days = 1; //starting with the current days
 //switching to help if contained in args
 if (args.h){
 	help_show();
-}
-
-//This shows help
-function help_show() {
-	console.log("Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE")
-	console.log("\n")
-	console.log("  -h\t\tShow this help message and exit.")
-	console.log("  -n, -s\tLatitude: N positive; S negative.")
-	console.log("  -e, -w\tLongitude: E positive; W negative.")
-	console.log"  -z\t\tTime zone: uses tz.guess() from moment-timezone by default.")
-	console.log( "  -d 0-6\tDay to retrieve weather: 0 is today; defaults to 1.")
-	console.log( "  -j\t\tEcho pretty JSON from open-meteo API and exit.")
-	process.exit(0);
 }
 
 //take in the number of days
@@ -80,17 +67,29 @@ if(args.j){
 if (days == 0){
 	console.log("today.");
 }else if (days > 1){
-	console.log("in" + " " + days "days.");
+	console.log("in" + " " + days + "days.");
 }
 else{
-	console.log("tomorrrow."
+	console.log("tomorrrow.");
 }
 
 //Printing if the user will need their galoshes
 if(data.daily.precipitation_hours[days] != 0){
 	console.log("You might need your galoshes.");
 }
-else if{data.daily.precipitation_hours[days] == 0){
+else if(data.daily.precipitation_hours[days] == 0){
 		console.log("You will not need your galoshes!");
 	}
+
+//This shows help
+function help_show() {
+	console.log("Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE")
+	console.log("\n")
+	console.log("  -h\t\tShow this help message and exit.")
+	console.log("  -n, -s\tLatitude: N positive; S negative.")
+	console.log("  -e, -w\tLongitude: E positive; W negative.")
+	console.log("  -z\t\tTime zone: uses tz.guess() from moment-timezone by default.")
+	console.log( "  -d 0-6\tDay to retrieve weather: 0 is today; defaults to 1.")
+	console.log( "  -j\t\tEcho pretty JSON from open-meteo API and exit.")
+	process.exit(0);
 }
