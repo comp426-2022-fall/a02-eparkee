@@ -6,7 +6,7 @@ import moment from "moment-timezone";
 import fetch from "node-fetch";
 
 //Setting the variables that will be used for the javascript
-let timezone = moment.tz.guess();
+const timezone = moment.tz.guess() || args.z;
 const args = minimist(process.argv.slice(2));
 
 //setting the default variables
@@ -47,13 +47,6 @@ else if(args.w){
 else{
 	console.log("Latitude must be in range.")
 	process.exit(0);
-}
-//setting the timezone
-if(args.z){
-	timezone = args.z;
-}
-if(args.t){
-	timezone = args.t;
 }
 
 //pulling the data from the API
