@@ -84,10 +84,10 @@ else{
 
 //Printing if the user will need their galoshes
 if(data.daily.precipitation_hours[days] != 0){
-	console.log("You might need your galoshes.");
+	console.log("Wear your galoshes.");
 }
 else if(data.daily.precipitation_hours[days] == 0){
-		console.log("You will not need your galoshes!");
+		console.log("No need for galoshes.");
 	}
 
 //This shows help
