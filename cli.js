@@ -68,11 +68,11 @@ if(args.d != null){
 //printing the day given by user
 if (days == 0){
 	console.log("today.");
-}else if (days > 1){
-	console.log("in" + " " + days + "days.");
+}else if (days == 1){
+	console.log("tomorrow.");
 }
 else{
-	console.log("tomorrrow");
+	console.log("in" + " " + day + "days.");
 }
 
 //Printing if the user will need their galoshes
